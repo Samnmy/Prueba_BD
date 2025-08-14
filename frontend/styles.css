@@ -1,0 +1,35 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.table-responsive {
+    margin-top: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+#customers-table th, #transactions-table th, 
+#total-paid-table th, #pending-invoices-table th {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.btn-action {
+    margin-right: 5px;
+}

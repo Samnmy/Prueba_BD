@@ -1,0 +1,291 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-f1g2-h3i4j5k6l7m8",
+    "name": "Fintech API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Colección de Postman para la API de gestión financiera Fintech"
+  },
+  "item": [
+    {
+      "name": "Customers",
+      "description": "Endpoints para gestión de clientes",
+      "item": [
+        {
+          "name": "Create Customer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"John Doe\",\n    \"identification_number\": 123456789,\n    \"address\": \"123 Main St, Anytown\",\n    \"phone\": \"555-1234\",\n    \"email\": \"john@example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/customers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "customers"
+              ]
+            },
+            "description": "Crea un nuevo cliente en el sistema"
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Customers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/customers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "customers"
+              ]
+            },
+            "description": "Obtiene todos los clientes registrados en el sistema"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Customer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/customers/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "customers",
+                "1"
+              ]
+            },
+            "description": "Obtiene un cliente específico por su ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Customer",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"John Doe Updated\",\n    \"identification_number\": 123456789,\n    \"address\": \"123 Main St, Anytown\",\n    \"phone\": \"555-1234\",\n    \"email\": \"john.updated@example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/customers/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "customers",
+                "1"
+              ]
+            },
+            "description": "Actualiza la información de un cliente existente"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Customer",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/customers/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "customers",
+                "1"
+              ]
+            },
+            "description": "Elimina un cliente del sistema"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reports",
+      "description": "Consultas avanzadas del sistema",
+      "item": [
+        {
+          "name": "Total paid by customer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/reports/total-paid",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "reports",
+                "total-paid"
+              ]
+            },
+            "description": "Muestra el total pagado por cada cliente"
+          },
+          "response": []
+        },
+        {
+          "name": "Pending invoices",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/reports/pending-invoices",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "reports",
+                "pending-invoices"
+              ]
+            },
+            "description": "Lista las facturas pendientes con información de cliente y transacción"
+          },
+          "response": []
+        },
+        {
+          "name": "Transactions by platform",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/reports/transactions-by-platform/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "reports",
+                "transactions-by-platform",
+                "1"
+              ]
+            },
+            "description": "Lista las transacciones realizadas por una plataforma específica (1: Nequi, 2: Daviplata)"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Data Import",
+      "description": "Importación masiva de datos desde CSV",
+      "item": [
+        {
+          "name": "Import data from CSV",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/import-data",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "import-data"
+              ]
+            },
+            "description": "Endpoint para iniciar la importación masiva de datos desde el archivo CSV"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Pre-request script (opcional)"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Tests scripts (opcional)",
+          "pm.test(\"Status code is 200\", function () {",
+          "    pm.response.to.have.status(200);",
+          "});"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
